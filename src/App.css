@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --bg-color: #0f0e16;
+  --header-bg: #9898983b;
+  --text-color: white;
+  --main-color: #0000fc29;
+  --selected-option-bg: #0000fc20;
+  --icon-bg: #24232e;
+  --main-transition: all 0.3s 0s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --option-bg: rgba(97, 97, 97, 0.2);
+  --main-form-bg:  rgb(0,0,0, 0.6);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+*::selection{
+  background-color: var(--main-color);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+body{
+  background-color: var(--bg-color);
+  /* background-image: url(./assests/pexels-pixabay-259915.jpg); */
+  color: var(--text-color);
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 100px;
+  font-family: "Tajawal", sans-serif;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+body::-webkit-scrollbar{
+  width: 10px;
+  background-color: rgb(37, 35, 50);
+}
+body::-webkit-scrollbar-thumb{
+  background-color: var(--main-color);
+}
+html{
+  scroll-behavior: smooth;
+  scroll-padding: 80px;
+}
+ul{
+  list-style: none;
+}
+img,video{
+  max-width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.container{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 767px) {
+  .container{
+    width: 750px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width: 992px) {
+  .container{
+    width: 980px;
+  }
+}
+@media (min-width: 1200px) {
+  .container{
+    width: 1180px;
   }
 }
