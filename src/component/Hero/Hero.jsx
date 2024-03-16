@@ -1,10 +1,20 @@
 import "./hero.css"
 import tripleCleanLogo from "../../assests/tri-logo-removebg-hd.png"
 import { BookBtn } from "../BookBtn/BookBtn"
+import { useEffect, useState } from "react"
 
 export const Hero = () => {
+    const [isLoaded, setIsLoaded] = useState(false)
+
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoaded(true)
+        }, 2000);
+    })
   return (
-    <div className="hero">
+    <div className={`hero` + (isLoaded ? ` loaded` : ``)}>
         <div className="container">
             {/* <div className="logo">
                 <img src={tripleCleanLogo} alt="Triple Clean Logo" />

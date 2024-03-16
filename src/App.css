@@ -12,10 +12,13 @@
   --text-color: white;
   --main-color: #0000fc29;
   --selected-option-bg: #0000fc20;
+  --selected-option-text: white;
   --icon-bg: #24232e;
+  --input-bg: #242424;
   --main-transition: all 0.3s 0s cubic-bezier(0.165, 0.84, 0.44, 1);
   --option-bg: rgba(97, 97, 97, 0.2);
-  --main-form-bg:  rgb(0,0,0, 0.6);
+  --main-form-bg:  #121219;
+  --main-trasnition: all 0.3s 0s ease-in-out;
 }
 *::selection{
   background-color: var(--main-color);

@@ -5,8 +5,29 @@ import { useEffect, useState } from "react"
 import questionMark from "../../assests/simone-secci-49uySSA678U-unsplash.jpg"
 import perfumeData from "../../assests/perfumes-data.json"
 const MainForm = () => {
+    
+    useEffect(() => {
+        let form = document.querySelector("form")
+        let formChildren = document.querySelectorAll("form > *")
+        window.addEventListener("scroll", () => {
+            if(window.scrollY >= form.offsetTop - 200){
+                form.style.cssText = `
+                    transform: translateY(0px);
+                    opacity: 1;
+                `
+            }
+            formChildren.forEach((child) => {
+                if(window.scrollY >= child.offsetTop){
+                    child.style.cssText = `
+                        transform: translateY(0px);
+                        opacity: 1;
+                    `
+                }
+            })
+        })
+    })
   return (
-    <form className="main-form" id="register">
+    <form className={`main-form`} id="register">
         <h1>احجز الآن</h1>
         <div>
             <h3>نوع الغسيل</h3>
