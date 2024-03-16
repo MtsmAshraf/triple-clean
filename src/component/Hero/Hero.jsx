@@ -5,9 +5,6 @@ import { useEffect, useState } from "react"
 
 export const Hero = () => {
     const [isLoaded, setIsLoaded] = useState(false)
-
-
-
     useEffect(() => {
         setTimeout(() => {
             setIsLoaded(true)

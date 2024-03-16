@@ -35,6 +35,11 @@ body{
   padding-top: 100px;
   font-family: "Tajawal", sans-serif;
 }
+@media (max-width: 600px) {
+  body{
+    padding-top: 20px;
+  }
+}
 body::-webkit-scrollbar{
   width: 10px;
   background-color: rgb(37, 35, 50);
