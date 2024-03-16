@@ -7,12 +7,17 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch, useSelector } from "react-redux"
 import { toggleTheme } from "../../store/themeSlice/themeSlice"
 import { useEffect } from "react"
+import { toggleLanguage } from "../../store/languageSlice/languageSlice"
 const Header = () => {
 
   const isDarkMode = useSelector(state => state.theme.isDarkMode);
   const dispatch = useDispatch();
   const toggleMode = () => {
     dispatch(toggleTheme());
+  };
+  const language = useSelector(state => state.language.language);
+  const toggleLang = () => {
+    dispatch(toggleLanguage());
   };
   let root = document.querySelector(":root")
   
@@ -57,13 +62,17 @@ const Header = () => {
                           }
                       </span>
                   </div>
-                  <div className="change-language">
-                      <span language="en" name="change-lang-icon" >
+                  <div className="change-language" onClick={() => {toggleLang()}}>
+                      {
+                        language === "arabic" ? 
+                        <span name="change-lang-icon" >
+                          en
+                        </span>
+                        : <span name="change-lang-icon" >
                           ع
-                      </span>
-                      <span language="ar" name="change-lang-icon" >
-                          En
-                      </span>
+                        </span>
+                      }
+                      
                   </div>
                 </div>
               </div>

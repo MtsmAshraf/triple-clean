@@ -7,15 +7,18 @@
     background-color: var(--main-form-bg);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    direction: rtl;
     margin-bottom: 50px;
     position: relative;
+}
+.main-form[language="arabic"]{
+    direction: rtl;
 }
 .main-form,
 .main-form > *{
     transform: translateY(20px);
     opacity: 0;
     transition: var(--main-transition);
+    transition-duration: 0.5s;
 }
 .main-form > *{
     transition-delay: 0.3s;
@@ -76,7 +79,8 @@
     margin-bottom: 10px;
 }
 .main-form .selectors-wrapper div{
-    width: calc((100% - 20px) / 3);
+    /* width: calc((100% - 20px) / 3); */
+    flex: 1;
 }
 .main-form input[type="radio"]{
     height: 0;
@@ -96,7 +100,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    height: 100px;
+
 }
 .main-form .selectors-wrapper div label:has(svg){
     padding-top: 20px;
@@ -130,6 +137,7 @@
     display: block;
     margin-top: 20px;
     width: 100%;
+    font-size: 16px;
 }
 .text input{
     width: 100px;
