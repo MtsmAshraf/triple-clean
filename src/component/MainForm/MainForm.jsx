@@ -17,7 +17,7 @@ const MainForm = () => {
                 `
             }
             formChildren.forEach((child) => {
-                if(window.scrollY >= child.offsetTop){
+                if(window.scrollY >= child.offsetTop - 200){
                     child.style.cssText = `
                         transform: translateY(0px);
                         opacity: 1;
