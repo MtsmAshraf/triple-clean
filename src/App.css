@@ -10,8 +10,10 @@
   --bg-color: #0f0e16;
   --header-bg: #9898983b;
   --text-color: white;
-  --main-color: #0000fc29;
-  --selected-option-bg: #0000fc20;
+  --main-color: #0000fc;
+  /* --main-color: #3d5aa6; */
+  --logo-color: #3d5aa6;
+  --selected-option-bg: var(--main-color);
   --selected-option-text: white;
   --icon-bg: #24232e;
   --input-bg: #242424;
