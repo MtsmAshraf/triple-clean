@@ -1,0 +1,269 @@
+.main-form{
+    width: 700px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: var(--main-form-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    background-image: var(--main-gradient);
+    box-shadow: var(--main-shadow);
+}
+@media (min-width: 767px) {
+    .main-form{
+        width: 750;
+        padding-left: 40px;
+        padding-right: 40px;
+        border-radius: 0;
+    }
+}
+@media (max-width: 767px) {
+    .main-form{
+        border-radius: 0;
+    }
+}
+.main-form[language="arabic"]{
+    direction: rtl;
+}
+.main-form,
+.main-form > *{
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--main-transition);
+    transition-duration: 0.5s;
+}
+.main-form > *{
+    transition-delay: 0.3s;
+    transition-duration: 0.5s;
+}
+.main-form h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.main-form > .typing-input{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.main-form > .typing-input.numeric{
+    flex-direction: row;
+    justify-content: space-between;
+}
+.main-form > .typing-input.numeric div{
+    width: calc((100% - 20px) / 2);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.main-form input,
+.main-form textarea{
+    background-color: var(--input-bg);
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    font-family: "Tajawal";
+    border-radius: 10px;
+    color: var(--text-color);
+    border: 1px solid transparent;
+    flex: 1;
+    resize: none;
+    width: 100% !important;
+}
+.main-form input:focus,
+.main-form textarea:focus{
+    background-color: var(--input-focus-bg);
+}
+.main-form textarea{
+    min-height: 100px
+}
+.main-form input:focus,
+.main-form textarea:focus{
+    border: 1px solid var(--main-color);
+}
+.main-form .selectors-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.main-form h3{
+    margin-bottom: 10px;
+}
+.main-form .selectors-wrapper div{
+    /* width: calc((100% - 20px) / 3); */
+    flex: 1;
+}
+.main-form input[type="radio"]{
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+.main-form .selectors-wrapper div label{
+    border: 1px solid var(--text-color);
+    display: block;
+    padding: 10px 0px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    color: var(--text-color);
+    background-color: var(--option-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    height: 100px;
+    transition: var(--main-transition);
+}
+.main-form .selectors-wrapper div label:has(.img){
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.main-form .selectors-wrapper div label:has(.img) span{
+    transform: translateY(-10px);
+}
+.main-form .selectors-wrapper div label .img{
+    width: 70px;    
+    position: relative;
+}
+.main-form .selectors-wrapper div label img{
+    position: relative;
+}
+.main-form .selectors-wrapper div label .img::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    background-color: rgba(255, 255, 0, 0.288);
+    transform: translate(-50%,-50%);
+    width: 40px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    opacity: 0;
+}
+.main-form .selectors-wrapper div:has(input:checked) label .img::before{
+    width: 60px;
+    opacity: 1;
+}
+.main-form .selectors-wrapper div:has(input:checked) label{
+    background-color: var(--selected-option-bg);
+    color: var(--selected-option-text);
+    border: 1px solid var(--main-color);
+}
+.main-form .selectors-wrapper div:has(input:checked) label svg,
+.main-form .selectors-wrapper div:has(input:checked) label span{
+    /* color: var(--main-color); */
+}
+.main-form .typing-input input#room-number{
+    width: fit-content;
+}
+.main-form button{
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-family: "Tajawal", sans-serif;
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+}
+.text input{
+    width: 100px;
+}
+.main-form .perfumes-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-height: 100px;
+    overflow-x: scroll;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.main-form .perfumes-wrapper::-webkit-scrollbar{
+    height: 10px;
+}
+.main-form .perfumes-wrapper::-webkit-scrollbar-track{
+    background-color: var(--icon-bg);
+    border-radius: 10px;
+}
+.main-form .perfumes-wrapper::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+.main-form .perfumes-wrapper .perfume{
+    position: relative;
+   
+    gap: 10px;
+    width: 400px;
+    height: 200px;
+}
+.main-form .perfumes-wrapper .perfume:first-of-type label{
+}
+.main-form .perfumes-wrapper .perfume label{
+    height: 100%;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--text-color);
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+}
+.main-form .perfumes-wrapper .perfume .img{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex: 1;
+}
+.main-form .perfumes-wrapper .perfume img{
+    /* width: 100px;
+    height: 100px; */
+}   
+.main-form .perfumes-wrapper .perfume span{
+    color: var(--text-color);
+    background-color: var(--option-bg);
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.main-form .perfumes-wrapper .perfume:has(input:checked) label{
+    border: 1px solid var(--main-color);
+}
+.main-form .perfumes-wrapper .perfume:has(input:checked) span{
+    background-color: var(--main-color);
+    color: white;
+}
+.main-form .form-bg-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-0%) translateY(-60%) !important;
+    width: 100%;
+    z-index: -1;
+    opacity: var(--logo-opacity) !important ;
+}
